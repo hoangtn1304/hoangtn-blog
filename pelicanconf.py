@@ -49,7 +49,7 @@ TAGS_SAVE_AS = 'tags/index.html'
 CATEGORIES_URL = 'categories'
 CATEGORIES_SAVE_AS = 'categories/index.html'
 
-ARCHIVES_URL = ''
+ARCHIVES_URL = 'archives'
 ARCHIVES_SAVE_AS = 'archives/index.html'
 
 FEED_ATOM = 'feeds/atom.xml'
