@@ -20,7 +20,7 @@ DELETE_OUTPUT_DIRECTORY = True
 GOOGLE_ANALYTICS = 'UA-11364428-13'
 
 
-PLUGINS = ['pelican.plugins.sitemap']
+PLUGINS = ['pelican.plugins.sitemap', 'minify']
 
 SITEMAP = {
     'format': 'xml',
