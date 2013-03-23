@@ -20,8 +20,6 @@ SOCIAL = (
     ('@rdegges', 'https://twitter.com/rdegges'),
 )
 
-DEFAULT_PAGINATION = 3
-
 THEME = 'tuxlite_tbs'
 
 
