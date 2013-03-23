@@ -50,7 +50,7 @@ CATEGORIES_URL = 'categories'
 CATEGORIES_SAVE_AS = 'categories/index.html'
 
 ARCHIVES_URL = 'archives'
-ARCHIVES_SAVE_AS = 'archives/index.html'
+ARCHIVES_SAVE_AS = None
 
 FEED_ATOM = 'feeds/atom.xml'
 FEED_RSS = 'feeds/rss.xml'
