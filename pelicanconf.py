@@ -13,6 +13,7 @@ DEFAULT_LANG = u'en'
 LINKS = (
     ('Code', 'http://github.com/rdegges'),
     ('Talks', 'http://speakerdeck.com/u/rdegges'),
+    ('Hardly Funny', 'http://hardlyfunny.com/'),
 )
 
 # Social widget
