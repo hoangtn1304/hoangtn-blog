@@ -3,6 +3,7 @@
 
 AUTHOR = u'Randall Degges'
 SITENAME = u'Randall Degges'
+SITESUBTITLE = u'Random thoughts of a happy programmer.'
 SITEURL = ''
 
 TIMEZONE = 'UTC'
