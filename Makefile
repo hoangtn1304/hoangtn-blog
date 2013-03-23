@@ -7,7 +7,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-S3_BUCKET=new.rdegges.com
+S3_BUCKET=www.rdegges.com
 
 help:
 	@echo 'Makefile for a pelican Web site                                        '
@@ -45,6 +45,12 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 s3_upload: publish
-	s3cmd sync --acl-public --reduced-redundancy --cf-invalidate output/* s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --delete-removed --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.html' --mime-type='text/html; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.xml' --mime-type='application/xml; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.css' --mime-type='text/css; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.js' --mime-type='application/javascript; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.png' --mime-type='image/png' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.gif' --mime-type='image/gif' --no-preserve output/ s3://$(S3_BUCKET)/
 
 .PHONY: html help clean regenerate serve devserver publish s3_upload
