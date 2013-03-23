@@ -46,6 +46,7 @@ publish:
 
 s3_upload: publish
 	s3cmd sync --acl-public --exclude='*.*' --include='*.html' --mime-type='text/html; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.txt' --mime-type='text/plain; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
 	s3cmd sync --acl-public --exclude='*.*' --include='*.xml' --mime-type='application/xml; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
 	s3cmd sync --acl-public --exclude='*.*' --include='*.css' --mime-type='text/css; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
 	s3cmd sync --acl-public --exclude='*.*' --include='*.js' --mime-type='application/javascript; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
