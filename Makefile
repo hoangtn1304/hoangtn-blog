@@ -53,5 +53,6 @@ s3_upload: publish
 	s3cmd sync --acl-public --exclude='*.*' --include='*.png' --mime-type='image/png' --no-preserve output/ s3://$(S3_BUCKET)/
 	s3cmd sync --acl-public --exclude='*.*' --include='*.gif' --mime-type='image/gif' --no-preserve output/ s3://$(S3_BUCKET)/
 	s3cmd sync --acl-public --delete-removed --no-preserve output/ s3://$(S3_BUCKET)/
+	python update_cache_headers.py
 
 .PHONY: html help clean regenerate serve devserver publish s3_upload
