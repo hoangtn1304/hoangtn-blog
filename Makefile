@@ -42,9 +42,11 @@ devserver:
 	$(BASEDIR)/develop_server.sh restart
 
 publish:
+	rm -rf $(OUTPUTDIR)
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 s3_upload: publish
+	rm -rf $(OUTPUTDIR)/theme/.webassets-cache
 	for f in `find $(OUTPUTDIR) -type f -name '*.gz'`; do mv $$f $${f%.gz}; done
 	s3cmd sync --acl-public --exclude='*.*' --include='*.html' --mime-type='text/html; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
 	s3cmd sync --acl-public --exclude='*.*' --include='*.txt' --mime-type='text/plain; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
