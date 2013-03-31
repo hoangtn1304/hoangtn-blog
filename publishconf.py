@@ -20,7 +20,7 @@ DELETE_OUTPUT_DIRECTORY = True
 GOOGLE_ANALYTICS = 'UA-11364428-13'
 
 
-PLUGINS = ['pelican.plugins.sitemap', 'pelican.plugins.gzip_cache']
+PLUGINS = ['pelican.plugins.sitemap', 'pelican.plugins.gzip_cache', 'pelican.plugins.assets']
 
 SITEMAP = {
     'format': 'xml',
