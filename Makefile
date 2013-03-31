@@ -45,14 +45,14 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 s3_upload: publish
-	s3cmd sync --acl-public --exclude='*.*' --include='*.html' --mime-type='text/html; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
-	s3cmd sync --acl-public --exclude='*.*' --include='*.txt' --mime-type='text/plain; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
-	s3cmd sync --acl-public --exclude='*.*' --include='*.xml' --mime-type='application/xml; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
-	s3cmd sync --acl-public --exclude='*.*' --include='*.css' --mime-type='text/css; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
-	s3cmd sync --acl-public --exclude='*.*' --include='*.js' --mime-type='application/javascript; charset=utf-8' --no-preserve output/ s3://$(S3_BUCKET)/
-	s3cmd sync --acl-public --exclude='*.*' --include='*.png' --mime-type='image/png' --no-preserve output/ s3://$(S3_BUCKET)/
-	s3cmd sync --acl-public --exclude='*.*' --include='*.gif' --mime-type='image/gif' --no-preserve output/ s3://$(S3_BUCKET)/
+	for f in `find $(OUTPUTDIR) -type f -name '*.gz'`; do mv $$f $${f%.gz}; done
+	s3cmd sync --acl-public --exclude='*.*' --include='*.html' --mime-type='text/html; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.txt' --mime-type='text/plain; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.xml' --mime-type='application/xml; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.css' --mime-type='text/css; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.js' --mime-type='application/javascript; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.png' --mime-type='image/png' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.gif' --mime-type='image/gif' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
 	s3cmd sync --acl-public --delete-removed --no-preserve output/ s3://$(S3_BUCKET)/
-	python update_cache_headers.py
 
 .PHONY: html help clean regenerate serve devserver publish s3_upload
