@@ -54,3 +54,6 @@ ARCHIVES_SAVE_AS = None
 
 FEED_ATOM = 'feeds/atom.xml'
 FEED_RSS = 'feeds/rss.xml'
+
+
+PLUGINS = ['pelican.plugins.assets']
