@@ -12,15 +12,15 @@ DEFAULT_LANG = u'en'
 
 # Blogroll
 LINKS = (
-    ('Code', 'http://github.com/rdegges'),
-    ('Talks', 'http://speakerdeck.com/u/rdegges'),
+    #('Code', 'http://github.com/rdegges'),
+    #('Talks', 'http://speakerdeck.com/u/rdegges'),
     ('Hardly Funny', 'http://hardlyfunny.com/'),
 )
 
 # Social widget
-SOCIAL = (
-    ('@rdegges', 'https://twitter.com/rdegges'),
-)
+#SOCIAL = (
+#    ('@rdegges', 'https://twitter.com/rdegges'),
+#)
 
 THEME = 'pelican-rdegges'
 
