@@ -22,7 +22,7 @@ SOCIAL = (
     ('@rdegges', 'https://twitter.com/rdegges'),
 )
 
-THEME = 'tuxlite_tbs'
+THEME = 'pelican-rdegges'
 
 
 ARTICLE_URL = '{slug}'
