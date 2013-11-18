@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
 
 AUTHOR = u'Randall Degges'
 SITENAME = u'Randall Degges'
