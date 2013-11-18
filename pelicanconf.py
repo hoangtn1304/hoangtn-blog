@@ -11,6 +11,7 @@ SITEURL = ''
 TIMEZONE = 'UTC'
 
 DEFAULT_LANG = u'en'
+DEFAULT_PAGINATION = False
 
 # Blogroll
 LINKS = (
