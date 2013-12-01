@@ -80,4 +80,7 @@ THEME_STATIC_DIR = 'theme'
 THEME_STATIC_PATHS = ['static']
 CSS_FILE = 'style.css'
 
+# Specifies the author of this site (will show in the meta author tag on all
+# pages).
 SITE_AUTHOR = 'Randall Degges'
+
