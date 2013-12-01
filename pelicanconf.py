@@ -103,3 +103,6 @@ SITE_URL = ''
 # This site's Google Analytics ID.  If specified, Google Analytics will be
 # automatically added to each page of the site.
 GOOGLE_ANALYTICS_ID = 'UA-11364428-13'
+
+# The default language of this site.
+LANGUAGE_CODE = DEFAULT_LANG
