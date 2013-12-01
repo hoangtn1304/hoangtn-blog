@@ -79,3 +79,5 @@ THEME = 'theme'
 THEME_STATIC_DIR = 'theme'
 THEME_STATIC_PATHS = ['static']
 CSS_FILE = 'style.css'
+
+SITE_AUTHOR = 'Randall Degges'
