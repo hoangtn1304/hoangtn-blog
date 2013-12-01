@@ -99,3 +99,7 @@ SITE_SUBTITLE = 'Random Thoughts of a Happy Programmer'
 # If you're running this site locally (for testing), set this to the empty
 # string ''.
 SITE_URL = ''
+
+# This site's Google Analytics ID.  If specified, Google Analytics will be
+# automatically added to each page of the site.
+GOOGLE_ANALYTICS_ID = 'UA-11364428-13'
