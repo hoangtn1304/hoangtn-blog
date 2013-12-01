@@ -72,3 +72,8 @@ ARCHIVES_SAVE_AS = 'archives/index.html'
 
 TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
 TRANSLATION_FEED_RSS = 'feeds/all-%s.rss.xml'
+
+THEME = 'notmyidea'
+THEME_STATIC_DIR = 'theme'
+THEME_STATIC_PATHS = ['static']
+CSS_FILE = 'main.css'
