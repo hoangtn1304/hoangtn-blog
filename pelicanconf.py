@@ -114,3 +114,7 @@ NAVIGATION_LINKS = (
     ('Talks', 'https://speakerdeck.com/rdegges'),
     ('Email', 'mailto:r@rdegges.com'),
 )
+
+# The year in which this site was started and stopped.
+SITE_COPYRIGHT_START = 2005
+SITE_COPYRIGHT_STOP = 2013
