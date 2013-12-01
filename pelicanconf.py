@@ -106,3 +106,11 @@ GOOGLE_ANALYTICS_ID = 'UA-11364428-13'
 
 # The default language of this site.
 LANGUAGE_CODE = DEFAULT_LANG
+
+# A list of navigation links that will show in the site's main navbar.
+NAVIGATION_LINKS = (
+    ('Twitter', 'https://twitter.com/rdegges'),
+    ('Code', 'https://github.com/rdegges'),
+    ('Talks', 'https://speakerdeck.com/rdegges'),
+    ('Email', 'mailto:r@rdegges.com'),
+)
