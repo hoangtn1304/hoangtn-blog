@@ -90,3 +90,6 @@ SITE_DESCRIPTION = 'The personal website of Randall Degges: programmer, speaker,
 
 # The title of this site.
 SITE_TITLE = 'Randall Degges'
+
+# The subtitle of this site.
+SITE_SUBTITLE = 'Random Thoughts of a Happy Programmer'
