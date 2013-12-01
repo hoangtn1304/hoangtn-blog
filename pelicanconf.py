@@ -13,9 +13,16 @@ IGNORE_FILES = (['.#*', 'README.md'])
 DEFAULT_LANG = u'en'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
+FEED_DOMAIN = SITEURL
+FEED_ATOM = 'feeds/%s.atom.xml'
+FEED_RSS = 'feeds/%s.rss.xml'
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_ALL_RSS = 'feeds/all.rss.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
+TAG_FEED_ATOM = 'feeds/%s.atom.xml'
+TAG_FEED_RSS = 'feeds/%s.rss.xml'
+
 
 # Blogroll
 LINKS =  (('Pelican', 'http://getpelican.com/'),
@@ -62,3 +69,6 @@ AUTHORS_SAVE_AS = 'authors/index.html'
 
 ARCHIVES_URL = 'archives'
 ARCHIVES_SAVE_AS = 'archives/index.html'
+
+TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
+TRANSLATION_FEED_RSS = 'feeds/all-%s.rss.xml'
