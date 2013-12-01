@@ -93,3 +93,9 @@ SITE_TITLE = 'Randall Degges'
 
 # The subtitle of this site.
 SITE_SUBTITLE = 'Random Thoughts of a Happy Programmer'
+
+# The fully qualified site URL (without a trailing slash).  For instance:
+# http://www.rdegges.com
+# If you're running this site locally (for testing), set this to the empty
+# string ''.
+SITE_URL = ''
