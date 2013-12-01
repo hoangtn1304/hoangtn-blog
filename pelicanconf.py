@@ -87,3 +87,6 @@ SITE_AUTHOR = 'Randall Degges'
 # The default meta description tag displayed on all page (can be overridden on
 # a per-article basis).
 SITE_DESCRIPTION = 'The personal website of Randall Degges: programmer, speaker, author and entrepreneur.'
+
+# The title of this site.
+SITE_TITLE = 'Randall Degges'
