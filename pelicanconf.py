@@ -6,7 +6,7 @@ AUTHOR = u'Randall Degges'
 SITENAME = u'Randall Degges'
 SITEURL = ''
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'UTC'
 
 DEFAULT_LANG = u'en'
 
@@ -28,4 +28,4 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
