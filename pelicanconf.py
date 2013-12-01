@@ -2,61 +2,30 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-
 AUTHOR = u'Randall Degges'
 SITENAME = u'Randall Degges'
-SITESUBTITLE = u'Random Thoughts of a Happy Programmer'
 SITEURL = ''
 
-TIMEZONE = 'UTC'
+TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'
-DEFAULT_PAGINATION = False
+
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS = (
-    #('Code', 'http://github.com/rdegges'),
-    #('Talks', 'http://speakerdeck.com/u/rdegges'),
-    ('Hardly Funny', 'http://hardlyfunny.com/'),
-)
+LINKS =  (('Pelican', 'http://getpelican.com/'),
+          ('Python.org', 'http://python.org/'),
+          ('Jinja2', 'http://jinja.pocoo.org/'),
+          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-#SOCIAL = (
-#    ('@rdegges', 'https://twitter.com/rdegges'),
-#)
+SOCIAL = (('You can add links in your config file', '#'),
+          ('Another social link', '#'),)
 
-THEME = 'pelican-rdegges'
+DEFAULT_PAGINATION = False
 
-
-ARTICLE_URL = '{slug}'
-ARTICLE_SAVE_AS = '{slug}/index.html'
-ARTICLE_LANG_URL = '{slug}-{lang}'
-ARTICLE_LANG_SAVE_AS = '{slug}-{lang}/index.html'
-PAGE_URL = 'pages/{slug}'
-PAGE_SAVE_AS = 'pages/{slug}/index.html'
-PAGE_LANG_URL = 'pages/{slug}-{lang}'
-PAGE_LANG_SAVE_AS = 'pages/{slug}-{lang}/index.html'
-AUTHOR_URL = 'author/{slug}'
-AUTHOR_SAVE_AS = 'author/{slug}/index.html'
-CATEGORY_URL = 'category/{slug}'
-CATEGORY_SAVE_AS = 'category/{slug}/index.html'
-TAG_URL = 'tag/{slug}'
-TAG_SAVE_AS = 'tag/{slug}/index.html'
-
-INDEX_URL = ''
-INDEX_SAVE_AS = 'index.html'
-
-TAGS_URL = 'tags'
-TAGS_SAVE_AS = 'tags/index.html'
-
-CATEGORIES_URL = 'categories'
-CATEGORIES_SAVE_AS = 'categories/index.html'
-
-ARCHIVES_URL = 'archives'
-ARCHIVES_SAVE_AS = None
-
-FEED_ATOM = 'feeds/atom.xml'
-FEED_RSS = 'feeds/rss.xml'
-
-
-PLUGINS = ['pelican.plugins.assets']
+# Uncomment following line if you want document-relative URLs when developing
+#RELATIVE_URLS = True
