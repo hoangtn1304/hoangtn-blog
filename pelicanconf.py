@@ -62,6 +62,25 @@ TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
 TRANSLATION_FEED_RSS = 'feeds/all-%s.rss.xml'
 
 
+### PLUGINS
+PLUGIN_PATH = '/home/rdegges/Code/forks/pelican-plugins'
+PLUGINS = ['assets', 'gzip_cache', 'optimize_images', 'sitemap']
+IMAGE_PATH = 'images'
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.9,
+        'pages': 0.8,
+        'indexes': 0.7,
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'pages': 'daily',
+        'indexes': 'weekly',
+    },
+}
+
+
 ### THEME CONFIGURATION (pelican-rdegges)
 THEME = 'theme'
 THEME_STATIC_DIR = 'theme'
