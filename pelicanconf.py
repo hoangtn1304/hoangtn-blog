@@ -116,6 +116,8 @@ LANGUAGE_CODE = DEFAULT_LANG
 
 # A list of navigation links that will show in the site's main navbar.
 NAVIGATION_LINKS = (
+    ('Home', '/'),
+    ('Archive', ARCHIVES_URL),
     ('Twitter', 'https://twitter.com/rdegges'),
     ('Code', 'https://github.com/rdegges'),
     ('Talks', 'https://speakerdeck.com/rdegges'),
@@ -125,3 +127,11 @@ NAVIGATION_LINKS = (
 # The year in which this site was started and stopped.
 SITE_COPYRIGHT_START = 2005
 SITE_COPYRIGHT_STOP = 2013
+
+# A list of social links you'd like to display.
+SOCIAL_LINKS = (
+    ('Twitter', 'https://twitter.com/rdegges'),
+    ('Facebook', 'https://www.facebook.com/rdegges'),
+    ('Google+', 'https://plus.google.com/109157194342162880262'),
+    ('GitHub', 'https://github.com/rdegges'),
+)
