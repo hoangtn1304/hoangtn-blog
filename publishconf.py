@@ -13,12 +13,17 @@ from pelicanconf import *
 SITEURL = 'http://www.rdegges.com'
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-
 DELETE_OUTPUT_DIRECTORY = True
 
-# Following items are often useful when publishing
 
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+### THEME CONFIGURATION (pelican-rdegges)
+SITE_URL = SITEURL
+NAVIGATION_LINKS = (
+    ('Home', SITE_URL),
+    ('Archive', ARCHIVES_URL),
+    ('Twitter', 'https://twitter.com/rdegges'),
+    ('Code', 'https://github.com/rdegges'),
+    ('Talks', 'https://speakerdeck.com/rdegges'),
+    ('Email', 'mailto:r@rdegges.com'),
+)
+
