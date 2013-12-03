@@ -96,7 +96,17 @@ ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 s3_upload: publish
-	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed
+	rm -rf $(OUTPUTDIR)/theme/.webassets-cache
+	for f in `find $(OUTPUTDIR) -type f -name '*.gz'`; do mv $$f $${f%.gz}; done
+	s3cmd sync --acl-public --exclude='*.*' --include='*.html' --mime-type='text/html; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.txt' --mime-type='text/plain; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.xml' --mime-type='application/xml; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.css' --mime-type='text/css; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Vary: Accept-Encoding' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.js' --mime-type='application/javascript; charset=utf-8' --add-header 'Content-Encoding: gzip' --add-header 'Vary: Accept-Encoding' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.png' --mime-type='image/png' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.jpg' --mime-type='image/jpeg' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --exclude='*.*' --include='*.gif' --mime-type='image/gif' --add-header 'Surrogate-Control: max-age=31536000' --add-header 'Cache-Control: s-maxage=31536000, max-age=31536000, public' --no-preserve output/ s3://$(S3_BUCKET)/
+	s3cmd sync --acl-public --delete-removed --no-preserve output/ s3://$(S3_BUCKET)/
 
 cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
