@@ -105,7 +105,7 @@ SITE_SUBTITLE = 'Random Thoughts of a Happy Programmer'
 # http://www.rdegges.com
 # If you're running this site locally (for testing), set this to the empty
 # string ''.
-SITE_URL = ''
+SITE_URL = SITEURL
 
 # This site's Google Analytics ID.  If specified, Google Analytics will be
 # automatically added to each page of the site.
@@ -116,7 +116,7 @@ LANGUAGE_CODE = DEFAULT_LANG
 
 # A list of navigation links that will show in the site's main navbar.
 NAVIGATION_LINKS = (
-    ('Home', '/'),
+    ('Home', SITE_URL),
     ('Archive', ARCHIVES_URL),
     ('Twitter', 'https://twitter.com/rdegges'),
     ('Code', 'https://github.com/rdegges'),
